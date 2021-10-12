@@ -6,26 +6,36 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("js") version "1.5.31"
+    kotlin("plugin.serialization") version "1.5.31"
 }
 
 group = "me.matthewherod"
 version = "1.0-SNAPSHOT"
 
+val ktorClientVersion by extra("1.6.1")
+
 repositories {
     jcenter()
+    mavenLocal()
     mavenCentral()
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
+    maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers") }
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
     implementation("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
+    implementation("io.ktor:ktor-client-core:1.6.1")
+    implementation("io.ktor:ktor-client-json:1.6.1")
+    implementation("io.ktor:ktor-client-serialization:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
+    implementation(npm("node-fetch", "^3.0.0", generateExternals = false))
 }
 
 kotlin {
     js(IR) {
         binaries.executable()
-        nodejs {
-        }
+        nodejs()
     }
 }
 

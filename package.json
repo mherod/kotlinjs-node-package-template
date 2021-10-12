@@ -3,7 +3,9 @@
   "version": "1.0.0-SNAPSHOT",
   "main": "kotlin/kotlinjs-node-package-template.js",
   "devDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  },
   "peerDependencies": {},
   "optionalDependencies": {},
   "bundledDependencies": []
