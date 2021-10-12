@@ -19,6 +19,8 @@ jobs:
             - v1-dependencies-
 
       - run: cd kotlinjs && ./gradlew build ; cd ..
+      - run: npm install
+      - run: git add . && commit -m "Update generated files" || echo "Didn't update any generated files"
 
       - save_cache:
           paths:
