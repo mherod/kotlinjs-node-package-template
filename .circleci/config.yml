@@ -20,7 +20,7 @@ jobs:
 
       - run: cd kotlinjs && ./gradlew build ; cd ..
       - run: npm install
-      - run: git add . && commit -m "Update generated files" || echo "Didn't update any generated files"
+      - run: git add . && commit -m "Update generated files" && git push origin || echo "Didn't update any generated files"
 
       - save_cache:
           paths:
