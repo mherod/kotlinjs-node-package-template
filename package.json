@@ -1,0 +1,10 @@
+{
+  "name": "kotlinjs-node-package-template",
+  "version": "1.0.0-SNAPSHOT",
+  "main": "kotlin/kotlinjs-node-package-template.js",
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
