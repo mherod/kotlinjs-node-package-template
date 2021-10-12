@@ -179,12 +179,13 @@
       }
       output = tmp$ret$1;
     }}
-  function main() {
-    println(greeting('kotlinjs-node-package-template'));
-  }
   function greeting(name) {
     return '' + 'Hello, ' + name;
   }
+  function main() {
+    println(greeting('kotlinjs-node-package-template'));
+  }
+  _.greeting = greeting;
   main();
   return _;
 }));
