@@ -6,3 +6,10 @@
 /kotlinjs/.idea/kotlinjs.iml
 /kotlinjs/.idea/misc.xml
 /node_modules
+/.idea/workspace.xml
+/.idea/gradle.xml
+/.idea/jsLibraryMappings.xml
+/.idea/vcs.xml
+.idea/artifacts/**.xml
+.idea/modules/**.iml
+/.idea/compiler.xml
