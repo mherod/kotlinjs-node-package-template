@@ -3,5 +3,4 @@ fun main() {
 }
 
 @JsExport
-fun greeting(name: String) =
-    "Hello, $name"
+fun greeting(name: String) = "Hello, $name"

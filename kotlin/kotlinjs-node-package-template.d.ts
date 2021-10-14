@@ -8,5 +8,8 @@ export namespace kotlinx.atomicfu {
 export namespace io.ktor.util {
     function AttributesJsFn(concurrent: boolean): io.ktor.util.Attributes;
 }
+export const Example: {
+    anAsyncFunction(): kotlin.js.Promise<string>;
+};
 export function greeting(name: string): string;
 export as namespace kotlinjs_node_package_template;

@@ -12,8 +12,6 @@ plugins {
 group = "me.matthewherod"
 version = "1.0-SNAPSHOT"
 
-val ktorClientVersion by extra("1.6.1")
-
 repositories {
     jcenter()
     mavenLocal()
@@ -25,9 +23,10 @@ repositories {
 dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
     implementation("org.jetbrains.kotlinx:kotlinx-nodejs:0.0.7")
-    implementation("io.ktor:ktor-client-core:1.6.1")
-    implementation("io.ktor:ktor-client-json:1.6.1")
-    implementation("io.ktor:ktor-client-serialization:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("io.ktor:ktor-client-core:1.6.4")
+    implementation("io.ktor:ktor-client-json:1.6.4")
+    implementation("io.ktor:ktor-client-serialization:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1")
     implementation(npm("node-fetch", "^3.0.0", generateExternals = false))
 }
@@ -76,7 +75,9 @@ fun KotlinCommonOptions.applyKotlinCompilerOptions() {
     listOf(
         "-Xopt-in=kotlin.RequiresOptIn",
         "-Xopt-in=kotlin.js.ExperimentalJsExport",
-        "-Xir-property-lazy-initialization"
+        "-Xopt-in=kotlin.experimental.ExperimentalTypeInference",
+        "-Xir-property-lazy-initialization",
+        "-Xerror-tolerance-policy=SYNTAX"
     ).filter { newArg ->
         newArg !in freeCompilerArgs
     }.forEach { newArg ->
