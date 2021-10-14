@@ -13,3 +13,4 @@
 .idea/artifacts/**.xml
 .idea/modules/**.iml
 /.idea/compiler.xml
+/.idea/misc.xml
